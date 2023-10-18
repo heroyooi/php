@@ -1,19 +1,10 @@
 <?php
-/*
-form -> JS (var check) -> (mysql) CRUD
-
-index -> list (R)
-delete -> D : list->삭제->js(confirm)->delete_proc.php (process)
-create -> write.php (C) -> form->등록->js(check)->write_proc.php (process)
-update -> update.php (U) -> list->수정->edit.php(form)->js(check)->edit_proc.php (process)
-*/
-
 require_once('./config/db_conn.php');
+
+// print_r($_POST);
 
 $sql_query = "select * from members order by idx desc";
 $result = mysqli_query($connect, $sql_query);
-
-echo "<a href='write.php'>등록</a>";
 
 echo "<table border='1'>";
 echo "<tr>";
@@ -39,15 +30,13 @@ while($row = mysqli_fetch_array($result))
     //echo "<input type='submit' value='삭제' />";
     //echo "<input type='text' name='del_no' value='" .$row['idx']. "' />";
     //echo "</form>";
-    echo "<a href='./delete_proc.php?del_no=".$row['idx']."'>삭제</a>";
+    echo "<a href='./delete.php?del_no=".$row['idx']."'>삭제</a>";
     echo "</td>";
 
     echo "</tr>";
 }
 
 echo "</table>";
-
-
 
 mysqli_close($connect);
 ?>
