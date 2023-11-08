@@ -1,10 +1,8 @@
 <?php
 require_once('./config/db_conn.php');
 
-/*
-print_r($_POST);
-Array ( [name] => 123 [age] => 123 [gender] => 남 )
-*/
+// echo $_POST['edit_no'];
+// exit;
 
 $name = trim($_POST['name']);
 $age = trim($_POST['age']);
@@ -16,9 +14,7 @@ if ($_POST['gender'] == "" && empty($_POST['gender']))
     $gender = $_POST['gender'];
 }
 
-
-// $sql_query = "insert into members (name, age, gender, regdate) values ('$name', '$age', '$gender', now())"; // 표준 방식
-$sql_query = "insert into members set name='".$name."', age='".$age."', gender='".$gender."', regdate=now() ";
+$sql_query = "update members set name='".$name."', age='".$age."', gender='".$gender."' where idx = ".$_POST['edit_no'];
 
 $result = mysqli_query($connect, $sql_query);
 if ($result)

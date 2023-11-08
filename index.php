@@ -29,7 +29,11 @@ while($row = mysqli_fetch_array($result))
 {
     echo "<tr>";
     echo "<td>".$row['idx']."</td>";
-    echo "<td>".$row['name']."</td>";
+    echo "<td>";
+    echo "<a href='./edit.php?edit_no=".$row['idx']."'>";
+    echo $row['name'];
+    echo "</a>";
+    echo "</td>";
     echo "<td>".$row['age']."</td>";
     echo "<td>".$row['gender']."</td>";
     echo "<td>".$row['regdate']."</td>";

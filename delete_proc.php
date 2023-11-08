@@ -5,6 +5,7 @@ print_r($_GET);
 
 $sql_query = "delete from members where idx = '".$_GET['del_no']."' ";
 $result = mysqli_query($connect, $sql_query);
+
 if ($result)
 {
     echo "정상적으로 삭제되었습니다.";
