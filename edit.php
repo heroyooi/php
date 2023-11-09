@@ -60,8 +60,11 @@ $row = mysqli_fetch_array($result);
                 </td>
             </tr>
             <tr>
-                <td colspan='2'>
-                    <input type="submit" value='수정' />
+                <td>
+                    <a href='./index.php'>목록</a>
+                </td>
+                <td>
+                    <input type="submit" value='저장' />
                 </td>
             </tr>
         </table>   

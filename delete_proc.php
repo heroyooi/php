@@ -1,7 +1,8 @@
 <?php
 require_once('./config/db_conn.php');
 
-print_r($_GET);
+// print_r($_GET);
+// exit;
 
 $sql_query = "delete from members where idx = '".$_GET['del_no']."' ";
 $result = mysqli_query($connect, $sql_query);

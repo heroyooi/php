@@ -30,7 +30,7 @@ while($row = mysqli_fetch_array($result))
     echo "<tr>";
     echo "<td>".$row['idx']."</td>";
     echo "<td>";
-    echo "<a href='./edit.php?edit_no=".$row['idx']."'>";
+    echo "<a href='./view.php?view_no=".$row['idx']."'>";
     echo $row['name'];
     echo "</a>";
     echo "</td>";
